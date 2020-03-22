@@ -93,7 +93,7 @@ func (graph GraphList) BreadthFirstSearch(startVertex int) []int {
 	if startVertex >= len(graph.adjList) {
 		return []int{}
 	}
-	var queue = new(data_structures.ArrQueue)
+	var queue = new(data_structures.ListQueue)
 	var visits = make([]bool, len(graph.adjList))
 	var visitedVertices = make([]int, 0, len(graph.adjList))
 	queue.Enqueue(startVertex)
@@ -145,7 +145,7 @@ func (graph *GraphArr) BreadthFirstSearch(startVertex int) []int {
 	}
 	var visits = make([]bool, len(graph.adjMatrix))
 	var visitedVertices = make([]int, 0, len(graph.adjMatrix))
-	var queue = new(data_structures.ArrQueue)
+	var queue = new(data_structures.ListQueue)
 	queue.Enqueue(startVertex)
 	for !queue.IsEmpty() {
 		var vertex, _ = queue.Dequeue()

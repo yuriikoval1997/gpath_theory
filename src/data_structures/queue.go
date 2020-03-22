@@ -11,7 +11,7 @@ type Queue interface {
 	IsEmpty() bool
 }
 
-type ArrQueue struct {
+type ListQueue struct {
 	head *node
 	tail *node
 	size int
@@ -22,7 +22,7 @@ type node struct {
 	next  *node
 }
 
-func (q *ArrQueue) Enqueue(n int) {
+func (q *ListQueue) Enqueue(n int) {
 	q.size += 1
 	if q.head == nil {
 		q.head = &node{n, nil}
@@ -34,7 +34,7 @@ func (q *ArrQueue) Enqueue(n int) {
 	q.tail = tmp
 }
 
-func (q *ArrQueue) Dequeue() (int, error) {
+func (q *ListQueue) Dequeue() (int, error) {
 	if q.head == nil {
 		return 0, errors.New("cannot dequeue empty queue")
 	}
@@ -44,14 +44,14 @@ func (q *ArrQueue) Dequeue() (int, error) {
 	return res, nil
 }
 
-func (q *ArrQueue) IsEmpty() bool {
+func (q *ListQueue) IsEmpty() bool {
 	if q.head == nil {
 		return true
 	}
 	return false
 }
 
-func (q *ArrQueue) String() string {
+func (q *ListQueue) String() string {
 	var el = q.head
 	var arr = make([]int, 0, q.size)
 	for el != nil {

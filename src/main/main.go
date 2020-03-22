@@ -25,7 +25,7 @@ func main() {
 	fmt.Println(stack.IsEmpty())
 
 	fmt.Println("Queue")
-	var queue = new(data_structures.ArrQueue)
+	var queue = new(data_structures.ListQueue)
 	fmt.Println(queue)
 	fmt.Println(queue.IsEmpty())
 	for i := 0; i < 20; i++ {
